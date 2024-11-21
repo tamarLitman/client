@@ -23,6 +23,10 @@ const theme = createTheme({
         background: {
             default: '#181818',
         },
+        typography: {
+            fontFamily: '\'Open Sans\', sans-serif',
+            secondaryFont: '\'Fredoka\', sans-serif', 
+        },
     },
 });
 
