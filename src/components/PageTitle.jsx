@@ -1,48 +1,50 @@
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
-export const PageTitle = ({props}) =>{
+
+export const PageTitle = ({ props }) => {
     const theme = useTheme();
     return (
-        <>
-            <div style={{
-                display: 'flex',
-                justifyContent: 'center', // Center the content horizontally
-                alignItems: 'center', // Center the content vertically
-                height: '100vh', // Full height of the viewport
-                width: '100vw', // Full width of the viewport
-                textAlign: 'center', 
+        <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height="100vh"
+            width="100vw"
+            textAlign="center"
+            sx={{
                 background: `radial-gradient(circle,
-                ${theme.palette.primary.light} 0%,${theme.palette.background.default}  100%)`,
+                    ${theme.palette.primary.light} 0%, ${theme.palette.background.default} 100%)`,
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-            }}>
-                <Typography variant="body1" component="p" 
-                    style={{
-                        paddingTop: '50px',
-                        paddingBottom:'10px',
+            }}
+        >
+            <Typography
+                variant="h2"
+                component="p"
+                sx={{
+                    paddingTop: '50px',
+                    paddingBottom: '10px',
+                    fontFamily: 'Fredoka',
+                    textUnderlinePosition: 'from-font',
+                    textDecorationSkipInk: 'none',
+                    color: 'text.primary',
+                }}
+            >
+                {props.title}
+                <Typography
+                    variant="h5"
+                    component="p"
+                    sx={{
                         fontFamily: 'Fredoka',
-                        fontSize: '64px',
-                        fontWeight: '300',
-                        lineHeight: '77.44px',
-                        textAlign: 'center',
                         textUnderlinePosition: 'from-font',
                         textDecorationSkipInk: 'none',
-                    }} sx={{ color: 'text.primary' }}>
-                    {props.title}
-                    <Typography variant="body1" component="p" 
-                        style={{fontFamily: 'Fredoka' ,
-                            fontSize: '32px',
-                            fontWeight: '400',
-                            lineHeight: '38.53px',
-                            textAlign: 'center',
-                            textUnderlinePosition: 'from-font',
-                            textDecorationSkipInk: 'none'
-                        }} sx={{ color: 'secondary.light' }}>
-                        {props.subtitle}
-                    </Typography>
+                        color: 'secondary.light',
+                    }}
+                >
+                    {props.subtitle}
                 </Typography>
-               
-            </div>
-        </>
+            </Typography>
+        </Box>
     );
 };
